@@ -1,0 +1,11 @@
+<% if cookies[:saved_subscriber] %>
+  Gracias por suscribirte
+<% else %>
+  <%= form_for @subscriber do |f| %>
+    <%= f.text_field :name, placeholder:"Nombre" %>
+    <%= f.email_field :email, placeholder:"Correo Electronico" %>
+    <%= f.hidden_field :source, value:"website" %>
+    <%= f.submit %>
+  <% end %>
+
+<% end %>

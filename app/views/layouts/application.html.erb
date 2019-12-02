@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Holamundoonline</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div id="cuerpo">
+        <% if notice %>
+        <%= notice %>
+      <% end %>
+    <header class="header">
+      <%= render 'partials/nav' %>
+      
+    </header>
+
+
+    <%= yield %>
+    <footer>
+      <%= render 'partials/footer' %>
+      
+    </footer>
+    </div>
+
+  </div>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+
+<script src="http://scrollmagic.io/assets/js/lib/velocity.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.js" integrity="sha256-ZTEnMVwBY082yM/d9tFkglZux9pVgwfOAg6HD4reObU=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/jquery.ScrollMagic.js" integrity="sha256-5vHGNJaK8z37odT7vJIF2YYQxUAtxZDKmlagRf/+p2Q=" crossorigin="anonymous"></script>   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.js" integrity="sha256-31FC/OT6XpfjAhj9FuXjw5/wPXXawCAjJQ29E23/XPk=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.js" integrity="sha256-peenofh8a9TIqKdPKIeQE7mJvuwh+J0To7nslvpj1jI=" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.velocity.js" integrity="sha256-/fsyeZsrLO6SAnmXkn9uhUOzLB8MQ+y1/k9ft3JPX1o=" crossorigin="anonymous"></script>
+
+    <script>
+        (function() {
+          // your page initialization code here
+          // the DOM will be available here
+          var controller = new ScrollMagic.Controller();
+          var controller2 = new ScrollMagic.Controller();
+          var scene = new ScrollMagic.Scene({triggerElement: "#trigger"})
+					// trigger a velocity opaticy animation
+          .setVelocity("#titulo", {opacity: 0}, {duration: 400})
+          .setClassToggle("#titulo", "zap")
+          .addIndicators()
+          .addTo(controller);
+//.addIndicators()
+          var scene2 = new ScrollMagic.Scene({triggerElement: "#cuerpo", duration: "100%", triggerHook:"onLeave"})
+          .addTo(controller2)
+          .addIndicators()
+          .on("progress", function (e) {
+            //$("#progressbar").text(e.progress.toFixed(3));
+            $("#progressbar").css({width:""+e.progress.toFixed(3)*100+"%"})
+            
+					});
+
+
+
+       })();
+       
+    </script>
+    
+  </body>
+</html>

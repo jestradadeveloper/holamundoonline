@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Holland';
+    src: url('Holland.eot');
+    src: url('Holland.eot?#iefix') format('embedded-opentype'),
+        url('Holland.woff2') format('woff2'),
+        url('Holland.woff') format('woff'),
+        url('Holland.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+

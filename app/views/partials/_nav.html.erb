@@ -1,0 +1,19 @@
+
+<nav class="navbar fixed-top navbar-expand-lg primary-color navbar-2">
+  <div class="container">
+    <%= link_to root_path, class:"navbar-brand" do %>
+    <%= image_tag('logo-red.png', class:"img-fluid") do %><% end %>
+    <% end %>
+    <div class="navbar-toggler text-right">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      
+      <span class="fa fa-reorder"></span>
+      </button>
+    </div>
+    <%= render 'partials/menu_simple' %>
+
+
+  </div>
+<div id="progressbar"></div>
+</nav>
