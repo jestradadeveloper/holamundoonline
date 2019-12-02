@@ -50,12 +50,10 @@
 					// trigger a velocity opaticy animation
           .setVelocity("#titulo", {opacity: 0}, {duration: 400})
           .setClassToggle("#titulo", "zap")
-          .addIndicators()
           .addTo(controller);
 //.addIndicators()
           var scene2 = new ScrollMagic.Scene({triggerElement: "#cuerpo", duration: "100%", triggerHook:"onLeave"})
           .addTo(controller2)
-          .addIndicators()
           .on("progress", function (e) {
             //$("#progressbar").text(e.progress.toFixed(3));
             $("#progressbar").css({width:""+e.progress.toFixed(3)*100+"%"})
