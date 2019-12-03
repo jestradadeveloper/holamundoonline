@@ -7,7 +7,7 @@ server '67.205.141.118', port: 22, roles: [:web, :app, :db], primary: true
 set :repo_url,        'git@github.com:jestradadeveloper/holamundowebsite.git'
 set :application,     'holamundoonline'
 set :user,            'joss'
-set :puma_threads,    [2, 5]
+set :puma_threads,    [2, 6]
 set :puma_workers,    1
 
 set :pty,             true
