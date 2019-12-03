@@ -1,10 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.2"
 
-append :linked_files, "config/secrets.yml"
 server '67.205.141.118', port: 22, roles: [:web, :app, :db], primary: true
-set :scm,           :git
-set :scm_user, "jestradadeveloper"
 set :repo_url,        'git@github.com:jestradadeveloper/holamundoonline.git'
 set :application,     'holamundoonline'
 set :user,            'joss'
