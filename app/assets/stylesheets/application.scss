@@ -21,21 +21,21 @@
  @import "main";
  @font-face {
   font-family: 'Holland';
-  src: url('./fonts/Holland.eot');
-  src: url('./fonts/Holland.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/Holland.woff2') format('woff2'),
-      url('./fonts/Holland.woff') format('woff'),
-      url('./fonts/Holland.ttf') format('truetype');
+  src: font-url('Holland.eot');
+  src: font-url('Holland.eot?#iefix') format('embedded-opentype'),
+      font-url('Holland.woff2') format('woff2'),
+      font-url('Holland.woff') format('woff'),
+      font-url('Holland.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Julius';
-  src: url('./fonts/JuliusSansOne-Regular.eot');
-  src: url('./fonts/JuliusSansOne-Regular.eot?#iefix') format('embedded-opentype'),
-      url('./fonts/JuliusSansOne-Regular.woff2') format('woff2'),
-      url('./fonts/JuliusSansOne-Regular.woff') format('woff'),
-      url('./fonts/JuliusSansOne-Regular.ttf') format('truetype');
+  src: font-url('JuliusSansOne-Regular.eot');
+  src: font-url('JuliusSansOne-Regular.eot?#iefix') format('embedded-opentype'),
+      font-url('JuliusSansOne-Regular.woff2') format('woff2'),
+      font-url('JuliusSansOne-Regular.woff') format('woff'),
+      font-url('JuliusSansOne-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
