@@ -7,9 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/2df13e98907ba2ea42378b556/606911dc0d62ee17af6e46a80.js");</script>
-  </head>
+    <% if Rails.env.production? %>
+    <script>
+    document.addEventListener('turbolinks:load', function(event) {
+      var url = event.data.url;  dataLayer.push({
+        'event':'pageView',
+        'virtualUrl': url
+      });
+    });(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PJX43BW');
+    </script>
+    <% end %>
+    </head>
 
   <body>
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=449217812404624&autoLogAppEvents=1"></script>
     <div id="cuerpo">
         <% if notice %>
         <%= notice %>
@@ -28,6 +44,9 @@
     </div>
 
   </div>
+
+
+<!-- End Google Tag Manager -->
 <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
 <% if params[:action] == 'index'  %>
